@@ -1,11 +1,13 @@
 # ROC-stats
-Compute the confidence interval for the area under the ROC curve (bootstrap stratified method)
+Compute the confidence interval for the area under the ROC curve (bootstrap stratified method).
+Multiprocessing activated by default
 
 
 # Dependencies
 
 - Numpy
 - Scikit-learn
+- Base: multiprocessing, time and math
 
 
 # Usage
