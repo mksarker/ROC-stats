@@ -1,19 +1,20 @@
-# ROC-stats
-Comparison of ROC curves
-
-# Compute the confidence interval for the area under the ROC curve (bootstrap stratified method)
+# -*- coding: utf-8 -*-
 
 
-# Dependencies
+# **************************************************************
+# ROC curve, confidence interval and p-value (bootstrapping)
+# 
+# v 0.1
+#
+# Inspired by:
+#		Carpenter J, Bithell J: Bootstrap confidence intervals: when, which, what? A practical guide for medical statisticians. Stat Med 2000; 19:1141–64
+#		Robin X, Turck N, Hainard A, et al.: pROC: An open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics 2011; 12:77
+# 		https://stackoverflow.com/questions/52373318/how-to-compare-roc-auc-scores-of-different-binary-classifiers-and-assess-statist
+# 		https://stackoverflow.com/questions/19124239/scikit-learn-roc-curve-with-confidence-intervals
+# 
+# © M. Sauthier - 2019 - AGPL v3.0
+# **************************************************************
 
-- Numpy
-- Scikit-learn
-
-
-# Usage
-```python
-
-# See test.py
 
 from ROC_CI import *
 
@@ -34,5 +35,3 @@ print('p-value less:', auc_pvalue(y_true, y_prob, y_true, y_prob2, n_repet=2000,
 print('p-value two sided (rev):', auc_pvalue(y_true, y_prob2, y_true, y_prob, n_repet=2000, alternative='two_sided'))
 print('p-value greater (rev):', auc_pvalue(y_true, y_prob2, y_true, y_prob, n_repet=2000, alternative='greater'))
 print('p-value less (rev):', auc_pvalue(y_true, y_prob2, y_true, y_prob, n_repet=2000, alternative='less'))
-
-```
